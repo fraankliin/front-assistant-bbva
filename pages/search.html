@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Semantic Search
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/search.css"
+    >
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <h2>BBVA</h2>
+
+            <span>
+                AI Assistant
+            </span>
+
+        </div>
+
+        <div class="navigation-section">
+
+            <h4>
+                Navegación
+            </h4>
+
+            <a
+                href="chat.html"
+                class="nav-item"
+            >
+                 Chat
+            </a>
+
+            <a
+                href="analytics.html"
+                class="nav-item"
+            >
+                 Analytics
+            </a>
+
+            <a
+                href="search.html"
+                class="nav-item active"
+            >
+                 Semantic Search
+            </a>
+
+            <a
+                href="admin.html"
+                class="nav-item"
+            >
+                     Administración
+            </a>
+
+        </div>
+
+        <div class="sidebar-footer">
+
+            <div id="userEmail"></div>
+
+            <button id="logoutBtn">
+                Cerrar sesión
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <h1>
+                Semantic Search
+            </h1>
+
+            <p>
+                Explora los chunks recuperados por el motor RAG.
+            </p>
+
+        </div>
+
+        <div class="search-card">
+
+            <form id="searchForm">
+
+                <input
+                    type="text"
+                    id="queryInput"
+                    placeholder="Escribe una consulta..."
+                    required
+                >
+
+                <div class="filters">
+
+                    <div>
+
+                        <label>
+                            Top K
+                        </label>
+
+                        <input
+                            type="number"
+                            id="limitInput"
+                            value="4"
+                            min="1"
+                            max="20"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Threshold
+                        </label>
+
+                        <input
+                            type="number"
+                            id="thresholdInput"
+                            value="0.4"
+                            min="0"
+                            max="1"
+                            step="0.1"
+                        >
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="search-btn"
+                >
+                    Buscar
+                </button>
+
+            </form>
+
+        </div>
+
+        <div id="resultsInfo"></div>
+
+        <div id="results"></div>
+
+    </main>
+
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/search.js"></script>
+
+</body>
+
+</html>

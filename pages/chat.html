@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BBVA AI Assistant</title>
+
+<link rel="stylesheet" href="../css/chat.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <h2>BBVA</h2>
+            <span>AI Assistant</span>
+        </div>
+
+        <button id="newChatBtn" class="new-chat-btn">
+            + Nueva conversación
+        </button>
+
+        <div class="conversation-section">
+
+            <h4>Conversaciones</h4>
+
+            <div id="conversationList">
+
+            </div>
+
+        </div>
+
+
+        <div class="navigation-section">
+
+    <h4>Navegación</h4>
+
+        <a href="chat.html" class="nav-item active">
+             Chat
+        </a>
+
+        <a href="analytics.html" class="nav-item">
+             Analytics
+        </a>
+
+        <a href="search.html" class="nav-item">
+             Semantic Search
+        </a>
+
+        <a href="admin.html" class="nav-item">
+             Administración
+        </a>
+
+    </div>
+
+
+
+        <div class="sidebar-footer">
+
+            <div id="userEmail"></div>
+
+            <button id="logoutBtn">
+                Cerrar sesión
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="chat-container">
+
+        <div id="chatMessages" class="chat-messages">
+
+            <div class="welcome">
+
+                <h1>¿Cómo puedo ayudarte hoy?</h1>
+
+                <p>
+                    Consulta información sobre productos,
+                    servicios y procesos de BBVA.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="chat-input-container">
+
+            <form id="chatForm">
+
+                <input
+                    id="messageInput"
+                    type="text"
+                    placeholder="Escribe tu consulta..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Enviar
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="../js/chat.js"></script>
+
+</body>
+</html>

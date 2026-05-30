@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Analytics Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/analytics.css"
+    >
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <h2>BBVA</h2>
+
+            <span>
+                AI Assistant
+            </span>
+
+        </div>
+
+        <div class="navigation-section">
+
+            <h4>
+                Navegación
+            </h4>
+
+            <a
+                href="chat.html"
+                class="nav-item"
+            >
+                 Chat
+            </a>
+
+            <a
+                href="analytics.html"
+                class="nav-item active"
+            >
+                 Analytics
+            </a>
+
+            <a
+                href="search.html"
+                class="nav-item"
+            >
+                 Semantic Search
+            </a>
+
+            <a
+                href="admin.html"
+                class="nav-item"
+            >
+                 Administración
+            </a>
+
+        </div>
+
+        <div class="sidebar-footer">
+
+            <div id="userEmail">
+            </div>
+
+            <button id="logoutBtn">
+                Cerrar sesión
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <h1>
+                Analytics Dashboard
+            </h1>
+
+            <p>
+                Métricas de uso, rendimiento y comportamiento del sistema RAG.
+            </p>
+
+        </div>
+
+        <!-- KPIs -->
+
+        <div
+            id="overviewCards"
+            class="overview-grid"
+        >
+        </div>
+
+        <!-- COMPORTAMIENTO Y RENDIMIENTO -->
+
+        <div class="analytics-grid">
+
+            <div class="card">
+
+                <h3>
+                     Comportamiento del Usuario
+                </h3>
+
+                <div id="behavior">
+
+                    <p>
+                        Cargando métricas...
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                     Rendimiento de la IA
+                </h3>
+
+                <div id="performance">
+
+                    <p>
+                        Cargando métricas...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DOCUMENTOS -->
+
+        <div class="card">
+
+            <h3>
+                 Documentos Más Consultados
+            </h3>
+
+            <div id="documents">
+
+                <p>
+                    Cargando documentos...
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CONSULTAS -->
+
+        <div class="card">
+
+            <h3>
+                 Consultas Más Frecuentes
+            </h3>
+
+            <div id="queries">
+
+                <p>
+                    Cargando consultas...
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CHUNKS -->
+
+        <div class="card">
+
+            <h3>
+                 Chunks Más Recuperados
+            </h3>
+
+            <div id="chunks">
+
+                <p>
+                    Cargando información...
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../js/config.js"></script>
+
+<script src="../js/api.js"></script>
+
+<script>
+
+const token =
+    localStorage.getItem(
+        "access_token"
+    );
+
+if (!token) {
+
+    window.location.href =
+        "../login.html";
+}
+
+const user =
+    JSON.parse(
+        localStorage.getItem("user")
+    );
+
+if (user) {
+
+    document.getElementById(
+        "userEmail"
+    ).textContent =
+        user.email;
+}
+
+document
+.getElementById(
+    "logoutBtn"
+)
+.addEventListener(
+    "click",
+    logout
+);
+
+</script>
+
+<script src="../js/analytics.js"></script>
+
+</body>
+
+</html>

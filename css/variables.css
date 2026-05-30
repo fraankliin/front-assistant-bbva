@@ -1,0 +1,20 @@
+:root {
+  --bbva-primary: #072146;
+  --bbva-secondary: #1464A5;
+  --bbva-accent: #2DCCCD;
+
+  --background: #F4F7FA;
+  --surface: #FFFFFF;
+
+  --text-primary: #121212;
+  --text-secondary: #6B7280;
+
+  --border: #E5E7EB;
+
+  --radius: 12px;
+
+  --shadow:
+    0 8px 24px rgba(0,0,0,.08);
+
+  --transition: .2s ease;
+}
